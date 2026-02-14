@@ -130,4 +130,4 @@ if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
     print(f"📍 Server running at: http://0.0.0.0:{port}")
     print("="*50 + "\n")
-    app.run(debug=False, host='0.0.0.0', port=port)
+    app.run()
