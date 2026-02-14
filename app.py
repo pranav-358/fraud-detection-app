@@ -123,11 +123,3 @@ def health():
         'model_loaded': model is not None and scaler is not None
     })
 
-if __name__ == '__main__':
-    print("\n" + "="*50)
-    print("🚀 Starting Fraud Detection Web App")
-    print("="*50)
-    port = int(os.environ.get('PORT', 5000))
-    print(f"📍 Server running at: http://0.0.0.0:{port}")
-    print("="*50 + "\n")
-    app.run(host="0.0.0.0", port=port)
