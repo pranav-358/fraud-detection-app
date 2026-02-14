@@ -127,6 +127,5 @@ def health():
         'status': 'healthy',
         'model_loaded': model is not None and scaler is not None,
         'sklearn_version': sklearn.__version__
-
     })
 
