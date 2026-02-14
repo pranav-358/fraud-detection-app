@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FraudShield - AI-Powered Transaction Security</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="40" height="40" rx="8" fill="url(#logo-gradient)"/>
+                    <path d="M20 10L28 16V24L20 30L12 24V16L20 10Z" stroke="white" stroke-width="2" fill="none"/>
+                    <circle cx="20" cy="20" r="4" fill="white"/>
+                    <defs>
+                        <linearGradient id="logo-gradient" x1="0" y1="0" x2="40" y2="40">
+                            <stop offset="0%" stop-color="#00D4FF"/>
+                            <stop offset="100%" stop-color="#0066FF"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <span class="logo-text">
+                    <strong>FraudShield</strong>
+                    <span class="logo-subtitle">AI Security</span>
+                </span>
+            </div>
+            <div class="nav-badge">
+                <span class="badge-dot"></span>
+                <span>Live Detection</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="content-wrapper">
+            <!-- Left Column - Hero & Info -->
+            <div class="left-column">
+                <div class="hero-section">
+                    <div class="hero-badge">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M8 0L10 6L16 8L10 10L8 16L6 10L0 8L6 6L8 0Z" fill="currentColor"/>
+                        </svg>
+                        <span>Powered by Pranav Tayade</span>
+                    </div>
+                    <h1 class="hero-title">Detect Fraud in<br><span class="gradient-text">Real-Time</span></h1>
+                    <p class="hero-description">Advanced AI algorithms analyze transaction patterns to identify suspicious activity before it happens. Protect your business with 99.2% accuracy.</p>
+                    
+                    <!-- Stats Grid -->
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-value">99.2%</div>
+                                <div class="stat-label">Accuracy Rate</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="12 6 12 12 16 14"/>
+                                </svg>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-value">&lt;500ms</div>
+                                <div class="stat-label">Response Time</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                                    <path d="M7 11V7a5 5 0 0110 0v4"/>
+                                </svg>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-value">100%</div>
+                                <div class="stat-label">Secure</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Features List -->
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="10" fill="#00D4FF" opacity="0.1"/>
+                                <path d="M6 10L9 13L14 7" stroke="#00D4FF" stroke-width="2" fill="none"/>
+                            </svg>
+                            <span>Random Forest ML Algorithm</span>
+                        </div>
+                        <div class="feature-item">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="10" fill="#00D4FF" opacity="0.1"/>
+                                <path d="M6 10L9 13L14 7" stroke="#00D4FF" stroke-width="2" fill="none"/>
+                            </svg>
+                            <span>Real-time Pattern Analysis</span>
+                        </div>
+                        <div class="feature-item">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="10" fill="#00D4FF" opacity="0.1"/>
+                                <path d="M6 10L9 13L14 7" stroke="#00D4FF" stroke-width="2" fill="none"/>
+                            </svg>
+                            <span>Zero Data Retention Policy</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column - Form & Results -->
+            <div class="right-column">
+                <div class="analysis-card">
+                    <div class="card-header">
+                        <h2>Transaction Analysis</h2>
+                        <p>Enter transaction details to check for fraud</p>
+                    </div>
+
+                    <form id="fraudForm" class="analysis-form">
+                        <!-- Amount Input -->
+                        <div class="form-field">
+                            <label for="amount">Transaction Amount</label>
+                            <div class="input-group">
+                                <span class="input-icon">$</span>
+                                <input 
+                                    type="number" 
+                                    id="amount" 
+                                    name="amount" 
+                                    placeholder="0.00" 
+                                    step="0.01" 
+                                    min="0.01" 
+                                    required
+                                >
+                            </div>
+                            <span class="field-hint">Average transaction: $75</span>
+                        </div>
+
+                        <!-- Distance Input -->
+                        <div class="form-field">
+                            <label for="distance">Distance from Home Location</label>
+                            <div class="input-group">
+                                <span class="input-icon">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                                        <circle cx="12" cy="10" r="3"/>
+                                    </svg>
+                                </span>
+                                <input 
+                                    type="number" 
+                                    id="distance" 
+                                    name="distance" 
+                                    placeholder="0" 
+                                    step="0.1" 
+                                    min="0" 
+                                    required
+                                >
+                                <span class="input-suffix">km</span>
+                            </div>
+                            <div class="distance-visual">
+                                <div class="distance-bar">
+                                    <div class="distance-fill" id="distanceFill"></div>
+                                </div>
+                                <div class="distance-labels">
+                                    <span>Nearby</span>
+                                    <span>Moderate</span>
+                                    <span>Far</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Transaction Type -->
+                        <div class="form-field">
+                            <label for="transaction_type">Transaction Method</label>
+                            <div class="radio-group">
+                                <label class="radio-option">
+                                    <input type="radio" name="transaction_type" value="0" required>
+                                    <span class="radio-card">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <circle cx="12" cy="12" r="10"/>
+                                            <line x1="2" y1="12" x2="22" y2="12"/>
+                                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                                        </svg>
+                                        <span class="radio-text">
+                                            <strong>Online</strong>
+                                            <small>Web purchase</small>
+                                        </span>
+                                    </span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="transaction_type" value="1" required>
+                                    <span class="radio-card">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                            <polyline points="9 22 9 12 15 12 15 22"/>
+                                        </svg>
+                                        <span class="radio-text">
+                                            <strong>In-Store</strong>
+                                            <small>Physical location</small>
+                                        </span>
+                                    </span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="transaction_type" value="2" required>
+                                    <span class="radio-card">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <rect x="2" y="6" width="20" height="12" rx="2"/>
+                                            <circle cx="12" cy="12" r="2"/>
+                                            <path d="M6 12h.01M18 12h.01"/>
+                                        </svg>
+                                        <span class="radio-text">
+                                            <strong>ATM</strong>
+                                            <small>Cash withdrawal</small>
+                                        </span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="submit-button" id="submitBtn">
+                            <span class="button-content" id="buttonContent">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="11" cy="11" r="8"/>
+                                    <path d="M21 21l-4.35-4.35"/>
+                                </svg>
+                                <span>Analyze Transaction</span>
+                            </span>
+                            <span class="button-loader" id="buttonLoader" style="display: none;">
+                                <span class="loader-spinner"></span>
+                                <span>Analyzing...</span>
+                            </span>
+                        </button>
+                    </form>
+
+                    <!-- Results Section -->
+                    <div id="resultSection" class="result-section" style="display: none;">
+                        <div class="result-header">
+                            <div class="result-icon" id="resultIcon"></div>
+                            <div class="result-info">
+                                <h3 id="resultTitle"></h3>
+                                <p id="resultMessage"></p>
+                            </div>
+                        </div>
+
+                        <div class="result-metrics">
+                            <div class="metric-card">
+                                <div class="metric-header">
+                                    <span class="metric-label">Confidence Level</span>
+                                    <span class="metric-value" id="confidenceValue">0%</span>
+                                </div>
+                                <div class="metric-bar">
+                                    <div class="metric-fill" id="confidenceFill"></div>
+                                </div>
+                            </div>
+
+                            <div class="probability-grid">
+                                <div class="probability-card fraud-card">
+                                    <div class="probability-icon">⚠️</div>
+                                    <div class="probability-info">
+                                        <span class="probability-label">Fraud Risk</span>
+                                        <span class="probability-value" id="fraudProbability">0%</span>
+                                    </div>
+                                    <div class="probability-bar">
+                                        <div class="probability-fill fraud-fill" id="fraudBar"></div>
+                                    </div>
+                                </div>
+                                <div class="probability-card safe-card">
+                                    <div class="probability-icon">✅</div>
+                                    <div class="probability-info">
+                                        <span class="probability-label">Legitimate</span>
+                                        <span class="probability-value" id="safeProbability">0%</span>
+                                    </div>
+                                    <div class="probability-bar">
+                                        <div class="probability-fill safe-fill" id="safeBar"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="result-actions">
+                            <button class="action-button secondary" onclick="resetForm()">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="1 4 1 10 7 10"/>
+                                    <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/>
+                                </svg>
+                                New Analysis
+                            </button>
+                            <button class="action-button primary" id="downloadReport">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                    <polyline points="7 10 12 15 17 10"/>
+                                    <line x1="12" y1="15" x2="12" y2="3"/>
+                                </svg>
+                                Download Report
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>Built with Flask, Scikit-Learn & Random Forest ML</p>
+            <div class="footer-links">
+                <a href="#">Documentation</a>
+                <a href="#">API</a>
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
