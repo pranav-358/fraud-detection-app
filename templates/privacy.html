@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - FraudShield</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .legal-page {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: var(--space-3xl) var(--space-lg);
+        }
+        .legal-header {
+            text-align: center;
+            margin-bottom: var(--space-3xl);
+            padding-bottom: var(--space-xl);
+            border-bottom: 2px solid var(--gray-200);
+        }
+        .legal-header h1 {
+            font-size: 2.5rem;
+            color: var(--gray-900);
+            margin-bottom: var(--space-md);
+        }
+        .legal-header p {
+            color: var(--gray-600);
+            font-size: 1rem;
+        }
+        .legal-content {
+            background: white;
+            padding: var(--space-2xl);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-lg);
+        }
+        .legal-content h2 {
+            font-size: 1.5rem;
+            color: var(--gray-900);
+            margin-top: var(--space-2xl);
+            margin-bottom: var(--space-md);
+            padding-bottom: var(--space-sm);
+            border-bottom: 2px solid var(--primary-500);
+        }
+        .legal-content h2:first-child {
+            margin-top: 0;
+        }
+        .legal-content h3 {
+            font-size: 1.125rem;
+            color: var(--gray-800);
+            margin-top: var(--space-xl);
+            margin-bottom: var(--space-sm);
+        }
+        .legal-content p {
+            color: var(--gray-700);
+            line-height: 1.8;
+            margin-bottom: var(--space-md);
+        }
+        .legal-content ul {
+            margin-left: var(--space-xl);
+            margin-bottom: var(--space-md);
+        }
+        .legal-content li {
+            color: var(--gray-700);
+            line-height: 1.8;
+            margin-bottom: var(--space-sm);
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            color: var(--primary-500);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: var(--space-xl);
+            transition: all 0.2s ease;
+        }
+        .back-link:hover {
+            gap: var(--space-md);
+            color: var(--primary-600);
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(0, 102, 255, 0.1));
+            border-left: 4px solid var(--primary-500);
+            padding: var(--space-lg);
+            border-radius: var(--radius-md);
+            margin: var(--space-xl) 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="40" height="40" rx="8" fill="url(#logo-gradient)"/>
+                    <path d="M20 10L28 16V24L20 30L12 24V16L20 10Z" stroke="white" stroke-width="2" fill="none"/>
+                    <circle cx="20" cy="20" r="4" fill="white"/>
+                    <defs>
+                        <linearGradient id="logo-gradient" x1="0" y1="0" x2="40" y2="40">
+                            <stop offset="0%" stop-color="#00D4FF"/>
+                            <stop offset="100%" stop-color="#0066FF"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <span class="logo-text">
+                    <strong>FraudShield</strong>
+                    <span class="logo-subtitle">AI Security</span>
+                </span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="legal-page">
+        <a href="/" class="back-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15 18 9 12 15 6"/>
+            </svg>
+            Back to Home
+        </a>
+
+        <div class="legal-header">
+            <h1>Privacy Policy</h1>
+            <p>Last Updated: February 14, 2026</p>
+        </div>
+
+        <div class="legal-content">
+            <div class="highlight-box">
+                <p><strong>TL;DR:</strong> We take your privacy seriously. FraudShield does not store, collect, or retain any of your transaction data. All analysis happens in real-time and no information is saved.</p>
+            </div>
+
+            <h2>1. Introduction</h2>
+            <p>Welcome to FraudShield ("we," "our," or "us"). This Privacy Policy explains how we handle information when you use our fraud detection service.</p>
+            <p>FraudShield is committed to protecting your privacy. This policy describes our data practices and your privacy rights.</p>
+
+            <h2>2. Information We Do NOT Collect</h2>
+            <p>FraudShield is designed with privacy in mind. We want to be clear about what we DON'T collect:</p>
+            <ul>
+                <li><strong>Transaction Data:</strong> We do not store any transaction amounts, distances, or transaction types you enter</li>
+                <li><strong>Personal Information:</strong> We do not collect names, addresses, phone numbers, or email addresses</li>
+                <li><strong>Financial Information:</strong> We do not store credit card numbers, bank account details, or any financial data</li>
+                <li><strong>User Accounts:</strong> We do not require account creation or login credentials</li>
+                <li><strong>Location Data:</strong> We do not track or store your physical location</li>
+            </ul>
+
+            <h2>3. How Our Service Works</h2>
+            <p>When you use FraudShield:</p>
+            <ul>
+                <li>You enter transaction details (amount, distance, type) in your browser</li>
+                <li>This data is sent to our server for analysis</li>
+                <li>Our AI model processes the data and returns a result</li>
+                <li>The data is immediately discarded and NOT saved</li>
+                <li>No database stores your information</li>
+            </ul>
+
+            <h3>Zero Data Retention</h3>
+            <p>We have implemented a strict zero data retention policy. Your transaction data exists only during the brief moment of analysis and is never written to any database or log file.</p>
+
+            <h2>4. Technical Information We May Collect</h2>
+            <p>For service improvement and security purposes, we may collect minimal, non-personal technical information:</p>
+            <ul>
+                <li><strong>Server Logs:</strong> Standard web server logs (IP addresses, browser type, access times) - these are automatically deleted after 7 days</li>
+                <li><strong>Error Reports:</strong> Technical error logs to improve service reliability - these contain no personal data</li>
+                <li><strong>Usage Statistics:</strong> Anonymous aggregate statistics (e.g., total number of analyses performed) - no individual data is tracked</li>
+            </ul>
+
+            <h2>5. Cookies and Tracking</h2>
+            <p>FraudShield does not use:</p>
+            <ul>
+                <li>Tracking cookies</li>
+                <li>Analytics tools (like Google Analytics)</li>
+                <li>Third-party advertising cookies</li>
+                <li>Social media pixels</li>
+            </ul>
+            <p>We may use essential session cookies only for basic functionality (e.g., maintaining your connection during analysis).</p>
+
+            <h2>6. Third-Party Services</h2>
+            <p>FraudShield is a self-contained service. We do not:</p>
+            <ul>
+                <li>Share data with third parties</li>
+                <li>Use third-party analytics services</li>
+                <li>Integrate with social media platforms</li>
+                <li>Sell or rent any information</li>
+            </ul>
+
+            <h2>7. Data Security</h2>
+            <p>While we don't store your data, we still take security seriously:</p>
+            <ul>
+                <li><strong>HTTPS Encryption:</strong> All data transmitted between your browser and our servers is encrypted</li>
+                <li><strong>Secure Infrastructure:</strong> Our servers are hosted on secure, reputable cloud platforms</li>
+                <li><strong>Regular Updates:</strong> We keep our software updated with the latest security patches</li>
+                <li><strong>Memory-Only Processing:</strong> Analysis happens in server memory and is never written to disk</li>
+            </ul>
+
+            <h2>8. Children's Privacy</h2>
+            <p>FraudShield is not intended for use by individuals under the age of 18. We do not knowingly collect information from children.</p>
+
+            <h2>9. International Users</h2>
+            <p>FraudShield is available globally. By using our service, you acknowledge that data processing may occur in the country where our servers are located.</p>
+
+            <h2>10. Your Rights</h2>
+            <p>Since we don't collect or store your personal data, there is no personal data to:</p>
+            <ul>
+                <li>Access</li>
+                <li>Correct</li>
+                <li>Delete</li>
+                <li>Export</li>
+            </ul>
+            <p>Your privacy is protected by design.</p>
+
+            <h2>11. Changes to This Policy</h2>
+            <p>We may update this Privacy Policy from time to time. When we do:</p>
+            <ul>
+                <li>The "Last Updated" date at the top will be revised</li>
+                <li>We will post the updated policy on this page</li>
+                <li>Material changes will be highlighted on our homepage</li>
+            </ul>
+
+            <h2>12. Open Source and Transparency</h2>
+            <p>FraudShield's code is open source and available for review on GitHub. You can verify our privacy claims by examining the source code.</p>
+
+            <h2>13. Contact Us</h2>
+            <p>If you have questions about this Privacy Policy or our data practices, please contact us:</p>
+            <ul>
+                <li><strong>Email:</strong> privacy@fraudshield.com</li>
+                <li><strong>GitHub:</strong> github.com/yourusername/fraud-detection-app</li>
+            </ul>
+
+            <h2>14. Legal Compliance</h2>
+            <p>FraudShield complies with applicable privacy laws including:</p>
+            <ul>
+                <li>GDPR (General Data Protection Regulation)</li>
+                <li>CCPA (California Consumer Privacy Act)</li>
+                <li>Other regional privacy regulations</li>
+            </ul>
+
+            <div class="highlight-box">
+                <h3>Summary</h3>
+                <p><strong>FraudShield is built on a foundation of privacy.</strong> We don't collect your data because we don't need it. Your transaction information is analyzed in real-time and immediately discarded. No databases, no tracking, no data retention.</p>
+                <p>Your privacy is not just a policy—it's our architecture.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>Built with Flask, Scikit-Learn & Random Forest ML</p>
+            <div class="footer-links">
+                <a href="/docs">Documentation</a>
+                <a href="/api">API</a>
+                <a href="/privacy">Privacy</a>
+                <a href="/terms">Terms</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

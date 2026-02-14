@@ -29,6 +29,26 @@ def home():
     """Render the main page"""
     return render_template('index.html')
 
+@app.route('/privacy')
+def privacy():
+    """Render privacy policy page"""
+    return render_template('privacy.html')
+
+@app.route('/terms')
+def terms():
+    """Render terms of service page"""
+    return render_template('terms.html')
+
+@app.route('/docs')
+def docs():
+    """Render documentation page"""
+    return render_template('docs.html')
+
+@app.route('/api')
+def api_docs():
+    """Redirect to API section of docs"""
+    return render_template('docs.html')
+
 @app.route('/predict', methods=['POST'])
 def predict():
     """
@@ -107,6 +127,7 @@ if __name__ == '__main__':
     print("\n" + "="*50)
     print("🚀 Starting Fraud Detection Web App")
     print("="*50)
-    print("📍 Server running at: http://127.0.0.1:5000")
+    port = int(os.environ.get('PORT', 5000))
+    print(f"📍 Server running at: http://0.0.0.0:{port}")
     print("="*50 + "\n")
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(debug=False, host='0.0.0.0', port=port)

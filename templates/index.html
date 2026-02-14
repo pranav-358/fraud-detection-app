@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation Bar -->
+    
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">
@@ -37,10 +37,9 @@
         </div>
     </nav>
 
-    <!-- Main Content -->
     <main class="main-content">
         <div class="content-wrapper">
-            <!-- Left Column - Hero & Info -->
+         
             <div class="left-column">
                 <div class="hero-section">
                     <div class="hero-badge">
@@ -52,7 +51,7 @@
                     <h1 class="hero-title">Detect Fraud in<br><span class="gradient-text">Real-Time</span></h1>
                     <p class="hero-description">Advanced AI algorithms analyze transaction patterns to identify suspicious activity before it happens. Protect your business with 99.2% accuracy.</p>
                     
-                    <!-- Stats Grid -->
+                
                     <div class="stats-grid">
                         <div class="stat-card">
                             <div class="stat-icon">
@@ -91,7 +90,7 @@
                         </div>
                     </div>
 
-                    <!-- Features List -->
+        
                     <div class="features-list">
                         <div class="feature-item">
                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -118,7 +117,6 @@
                 </div>
             </div>
 
-            <!-- Right Column - Form & Results -->
             <div class="right-column">
                 <div class="analysis-card">
                     <div class="card-header">
@@ -127,7 +125,7 @@
                     </div>
 
                     <form id="fraudForm" class="analysis-form">
-                        <!-- Amount Input -->
+                       
                         <div class="form-field">
                             <label for="amount">Transaction Amount</label>
                             <div class="input-group">
@@ -145,7 +143,7 @@
                             <span class="field-hint">Average transaction: $75</span>
                         </div>
 
-                        <!-- Distance Input -->
+                       
                         <div class="form-field">
                             <label for="distance">Distance from Home Location</label>
                             <div class="input-group">
@@ -178,7 +176,7 @@
                             </div>
                         </div>
 
-                        <!-- Transaction Type -->
+                        
                         <div class="form-field">
                             <label for="transaction_type">Transaction Method</label>
                             <div class="radio-group">
@@ -226,7 +224,7 @@
                             </div>
                         </div>
 
-                        <!-- Submit Button -->
+                        
                         <button type="submit" class="submit-button" id="submitBtn">
                             <span class="button-content" id="buttonContent">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -242,7 +240,7 @@
                         </button>
                     </form>
 
-                    <!-- Results Section -->
+                   
                     <div id="resultSection" class="result-section" style="display: none;">
                         <div class="result-header">
                             <div class="result-icon" id="resultIcon"></div>
@@ -310,17 +308,16 @@
         </div>
     </main>
 
-    <!-- Footer -->
+   
     <footer class="footer">
         <div class="footer-content">
             <p>Built with Flask, Scikit-Learn & Random Forest ML</p>
             <div class="footer-links">
-                <a href="#">Documentation</a>
-                <a href="#">API</a>
-                <a href="#">Privacy</a>
-                <a href="#">Terms</a>
+                <a href="/docs">Documentation</a>
+                <a href="/privacy">Privacy & Policy</a>
+                <a href="/terms">Terms</a>
             </div>
-        </div>
+        </div> 
     </footer>
 
     <script src="{{ url_for('static', filename='script.js') }}"></script>

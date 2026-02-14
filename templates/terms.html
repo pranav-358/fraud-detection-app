@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - FraudShield</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .legal-page {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: var(--space-3xl) var(--space-lg);
+        }
+        .legal-header {
+            text-align: center;
+            margin-bottom: var(--space-3xl);
+            padding-bottom: var(--space-xl);
+            border-bottom: 2px solid var(--gray-200);
+        }
+        .legal-header h1 {
+            font-size: 2.5rem;
+            color: var(--gray-900);
+            margin-bottom: var(--space-md);
+        }
+        .legal-header p {
+            color: var(--gray-600);
+            font-size: 1rem;
+        }
+        .legal-content {
+            background: white;
+            padding: var(--space-2xl);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-lg);
+        }
+        .legal-content h2 {
+            font-size: 1.5rem;
+            color: var(--gray-900);
+            margin-top: var(--space-2xl);
+            margin-bottom: var(--space-md);
+            padding-bottom: var(--space-sm);
+            border-bottom: 2px solid var(--primary-500);
+        }
+        .legal-content h2:first-child {
+            margin-top: 0;
+        }
+        .legal-content h3 {
+            font-size: 1.125rem;
+            color: var(--gray-800);
+            margin-top: var(--space-xl);
+            margin-bottom: var(--space-sm);
+        }
+        .legal-content p {
+            color: var(--gray-700);
+            line-height: 1.8;
+            margin-bottom: var(--space-md);
+        }
+        .legal-content ul {
+            margin-left: var(--space-xl);
+            margin-bottom: var(--space-md);
+        }
+        .legal-content li {
+            color: var(--gray-700);
+            line-height: 1.8;
+            margin-bottom: var(--space-sm);
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            color: var(--primary-500);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: var(--space-xl);
+            transition: all 0.2s ease;
+        }
+        .back-link:hover {
+            gap: var(--space-md);
+            color: var(--primary-600);
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(0, 102, 255, 0.1));
+            border-left: 4px solid var(--primary-500);
+            padding: var(--space-lg);
+            border-radius: var(--radius-md);
+            margin: var(--space-xl) 0;
+        }
+        .warning-box {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(245, 158, 11, 0.1));
+            border-left: 4px solid var(--danger);
+            padding: var(--space-lg);
+            border-radius: var(--radius-md);
+            margin: var(--space-xl) 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="40" height="40" rx="8" fill="url(#logo-gradient)"/>
+                    <path d="M20 10L28 16V24L20 30L12 24V16L20 10Z" stroke="white" stroke-width="2" fill="none"/>
+                    <circle cx="20" cy="20" r="4" fill="white"/>
+                    <defs>
+                        <linearGradient id="logo-gradient" x1="0" y1="0" x2="40" y2="40">
+                            <stop offset="0%" stop-color="#00D4FF"/>
+                            <stop offset="100%" stop-color="#0066FF"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <span class="logo-text">
+                    <strong>FraudShield</strong>
+                    <span class="logo-subtitle">AI Security</span>
+                </span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="legal-page">
+        <a href="/" class="back-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15 18 9 12 15 6"/>
+            </svg>
+            Back to Home
+        </a>
+
+        <div class="legal-header">
+            <h1>Terms of Service</h1>
+            <p>Last Updated: February 14, 2026</p>
+        </div>
+
+        <div class="legal-content">
+            <div class="highlight-box">
+                <p><strong>Welcome to FraudShield!</strong> By using our service, you agree to these terms. Please read them carefully. FraudShield is a demonstration tool for educational purposes and should not be used as the sole basis for financial decisions.</p>
+            </div>
+
+            <h2>1. Acceptance of Terms</h2>
+            <p>By accessing and using FraudShield ("Service," "we," "our," or "us"), you accept and agree to be bound by the terms and provisions of this agreement.</p>
+            <p>If you do not agree to these Terms of Service, please do not use our service.</p>
+
+            <h2>2. Description of Service</h2>
+            <p>FraudShield is an AI-powered fraud detection tool that analyzes transaction patterns to identify potentially fraudulent activity. The service:</p>
+            <ul>
+                <li>Uses machine learning algorithms to analyze transaction data</li>
+                <li>Provides risk assessments based on amount, location, and transaction type</li>
+                <li>Offers real-time analysis without storing user data</li>
+                <li>Is provided as a demonstration and educational tool</li>
+            </ul>
+
+            <h2>3. Educational and Demonstration Purpose</h2>
+            <div class="warning-box">
+                <p><strong>IMPORTANT:</strong> FraudShield is designed for educational, demonstration, and portfolio purposes. It should NOT be used as:</p>
+                <ul>
+                    <li>The sole basis for financial or security decisions</li>
+                    <li>A replacement for professional fraud detection systems</li>
+                    <li>A guaranteed method of preventing fraud</li>
+                    <li>Financial or legal advice</li>
+                </ul>
+            </div>
+
+            <h2>4. User Responsibilities</h2>
+            <p>When using FraudShield, you agree to:</p>
+            <ul>
+                <li><strong>Provide Accurate Information:</strong> Enter transaction details accurately for meaningful analysis</li>
+                <li><strong>Use Responsibly:</strong> Not attempt to abuse, hack, or compromise the service</li>
+                <li><strong>Respect Rate Limits:</strong> Not overwhelm the service with excessive requests</li>
+                <li><strong>No Malicious Use:</strong> Not use the service to test real fraud or illegal activities</li>
+                <li><strong>Comply with Laws:</strong> Use the service in compliance with all applicable laws and regulations</li>
+            </ul>
+
+            <h2>5. Prohibited Uses</h2>
+            <p>You may NOT use FraudShield to:</p>
+            <ul>
+                <li>Conduct actual fraudulent activities or test fraud techniques</li>
+                <li>Violate any laws or regulations</li>
+                <li>Harass, abuse, or harm others</li>
+                <li>Distribute malware, viruses, or harmful code</li>
+                <li>Attempt to gain unauthorized access to our systems</li>
+                <li>Scrape, data mine, or extract data from the service</li>
+                <li>Resell or commercialize the service without permission</li>
+                <li>Impersonate others or provide false information</li>
+            </ul>
+
+            <h2>6. Accuracy and Reliability</h2>
+            <div class="warning-box">
+                <h3>No Guarantees</h3>
+                <p>FraudShield provides analysis based on machine learning models trained on synthetic data. We do not guarantee:</p>
+                <ul>
+                    <li>100% accuracy in fraud detection</li>
+                    <li>That all fraudulent transactions will be identified</li>
+                    <li>That legitimate transactions won't be flagged as suspicious</li>
+                    <li>Continuous, uninterrupted service availability</li>
+                </ul>
+                <p><strong>Always use professional fraud detection services for real financial security needs.</strong></p>
+            </div>
+
+            <h2>7. Disclaimer of Warranties</h2>
+            <p>FraudShield is provided "AS IS" and "AS AVAILABLE" without warranties of any kind, either express or implied, including but not limited to:</p>
+            <ul>
+                <li>Warranties of merchantability</li>
+                <li>Fitness for a particular purpose</li>
+                <li>Non-infringement</li>
+                <li>Accuracy or reliability of results</li>
+                <li>Uninterrupted or error-free operation</li>
+            </ul>
+
+            <h2>8. Limitation of Liability</h2>
+            <p>To the maximum extent permitted by law, FraudShield and its creators shall not be liable for:</p>
+            <ul>
+                <li>Any financial losses resulting from use of the service</li>
+                <li>Decisions made based on analysis results</li>
+                <li>Fraudulent transactions that are not detected</li>
+                <li>Legitimate transactions incorrectly flagged as fraud</li>
+                <li>Service interruptions, downtime, or technical issues</li>
+                <li>Loss of data, profits, or business opportunities</li>
+                <li>Indirect, incidental, special, or consequential damages</li>
+            </ul>
+
+            <h2>9. Indemnification</h2>
+            <p>You agree to indemnify and hold harmless FraudShield, its creators, and affiliates from any claims, damages, or expenses arising from:</p>
+            <ul>
+                <li>Your use of the service</li>
+                <li>Your violation of these Terms</li>
+                <li>Your violation of any third-party rights</li>
+                <li>Any content you submit or transmit</li>
+            </ul>
+
+            <h2>10. Intellectual Property</h2>
+            <p>FraudShield is open-source software:</p>
+            <ul>
+                <li><strong>Code:</strong> Available under MIT License on GitHub</li>
+                <li><strong>Logo and Branding:</strong> FraudShield name and logo are trademarks</li>
+                <li><strong>User Content:</strong> You retain rights to data you input (though we don't store it)</li>
+                <li><strong>Modifications:</strong> You may fork and modify the code per the MIT License</li>
+            </ul>
+
+            <h2>11. Service Availability</h2>
+            <p>We strive to keep FraudShield available, but we do not guarantee:</p>
+            <ul>
+                <li>24/7 uptime (free tier may have limitations)</li>
+                <li>Immediate response times during high traffic</li>
+                <li>That the service will always be available</li>
+            </ul>
+            <p>We may suspend or terminate the service at any time for maintenance, updates, or other reasons.</p>
+
+            <h2>12. Free Tier Limitations</h2>
+            <p>FraudShield is currently offered as a free service with the following limitations:</p>
+            <ul>
+                <li>Service may "sleep" after 15 minutes of inactivity</li>
+                <li>First request after sleep may take 30-60 seconds</li>
+                <li>Rate limiting may apply during high traffic</li>
+                <li>No guaranteed uptime or SLA</li>
+            </ul>
+
+            <h2>13. Privacy and Data</h2>
+            <p>Your use of FraudShield is also governed by our <a href="/privacy" style="color: var(--primary-500);">Privacy Policy</a>. Key points:</p>
+            <ul>
+                <li>We do not store your transaction data</li>
+                <li>Analysis happens in real-time and data is discarded</li>
+                <li>We do not sell or share your information</li>
+                <li>No user accounts or personal information required</li>
+            </ul>
+
+            <h2>14. Changes to Service</h2>
+            <p>We reserve the right to:</p>
+            <ul>
+                <li>Modify or discontinue the service at any time</li>
+                <li>Update features, algorithms, or functionality</li>
+                <li>Change pricing (currently free) with advance notice</li>
+                <li>Add or remove features</li>
+            </ul>
+
+            <h2>15. Changes to Terms</h2>
+            <p>We may update these Terms of Service from time to time. When we do:</p>
+            <ul>
+                <li>The "Last Updated" date will be revised</li>
+                <li>Material changes will be highlighted</li>
+                <li>Continued use constitutes acceptance of new terms</li>
+            </ul>
+
+            <h2>16. Termination</h2>
+            <p>We may terminate or suspend your access to FraudShield immediately, without notice, for:</p>
+            <ul>
+                <li>Violation of these Terms</li>
+                <li>Abusive or harmful behavior</li>
+                <li>Illegal activities</li>
+                <li>At our discretion for any reason</li>
+            </ul>
+
+            <h2>17. Governing Law</h2>
+            <p>These Terms shall be governed by and construed in accordance with applicable laws, without regard to conflict of law provisions.</p>
+
+            <h2>18. Dispute Resolution</h2>
+            <p>Any disputes arising from these Terms or use of the service should first be addressed through informal negotiation. If unresolved, disputes may be subject to binding arbitration or small claims court.</p>
+
+            <h2>19. Severability</h2>
+            <p>If any provision of these Terms is found to be unenforceable, the remaining provisions will remain in full force and effect.</p>
+
+            <h2>20. Entire Agreement</h2>
+            <p>These Terms, together with our Privacy Policy, constitute the entire agreement between you and FraudShield regarding use of the service.</p>
+
+            <h2>21. Contact Information</h2>
+            <p>Questions about these Terms? Contact us:</p>
+            <ul>
+                <li><strong>Email:</strong> legal@fraudshield.com</li>
+                <li><strong>GitHub:</strong> github.com/yourusername/fraud-detection-app</li>
+                <li><strong>Issues:</strong> Report bugs or issues on GitHub</li>
+            </ul>
+
+            <h2>22. Acknowledgment</h2>
+            <p>By using FraudShield, you acknowledge that:</p>
+            <ul>
+                <li>You have read and understood these Terms</li>
+                <li>You agree to be bound by these Terms</li>
+                <li>You are using the service at your own risk</li>
+                <li>This is a demonstration tool, not professional fraud detection software</li>
+                <li>You will not rely solely on this service for financial decisions</li>
+            </ul>
+
+            <div class="highlight-box">
+                <h3>Thank You</h3>
+                <p>Thank you for using FraudShield! We built this tool to demonstrate AI-powered fraud detection and hope it serves as a valuable educational resource.</p>
+                <p>Remember: Always use professional, certified fraud detection systems for real financial security needs.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>Built with Flask, Scikit-Learn & Random Forest ML</p>
+            <div class="footer-links">
+                <a href="/docs">Documentation</a>
+                <a href="/api">API</a>
+                <a href="/privacy">Privacy</a>
+                <a href="/terms">Terms</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

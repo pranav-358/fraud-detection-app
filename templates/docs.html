@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation - FraudShield</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .docs-page {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--space-3xl) var(--space-lg);
+        }
+        .docs-header {
+            text-align: center;
+            margin-bottom: var(--space-3xl);
+            padding-bottom: var(--space-xl);
+            border-bottom: 2px solid var(--gray-200);
+        }
+        .docs-header h1 {
+            font-size: 2.5rem;
+            color: var(--gray-900);
+            margin-bottom: var(--space-md);
+        }
+        .docs-header p {
+            color: var(--gray-600);
+            font-size: 1.125rem;
+        }
+        .docs-content {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: var(--space-3xl);
+        }
+        .docs-sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+        .docs-nav {
+            background: white;
+            padding: var(--space-lg);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-md);
+        }
+        .docs-nav h3 {
+            font-size: 0.875rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: var(--space-md);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .docs-nav ul {
+            list-style: none;
+        }
+        .docs-nav li {
+            margin-bottom: var(--space-sm);
+        }
+        .docs-nav a {
+            color: var(--gray-600);
+            text-decoration: none;
+            font-size: 0.9375rem;
+            display: block;
+            padding: var(--space-sm);
+            border-radius: var(--radius-md);
+            transition: all 0.2s ease;
+        }
+        .docs-nav a:hover {
+            background: var(--gray-100);
+            color: var(--primary-500);
+        }
+        .docs-main {
+            background: white;
+            padding: var(--space-2xl);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-lg);
+        }
+        .docs-main h2 {
+            font-size: 1.875rem;
+            color: var(--gray-900);
+            margin-top: var(--space-3xl);
+            margin-bottom: var(--space-lg);
+            padding-bottom: var(--space-md);
+            border-bottom: 2px solid var(--primary-500);
+        }
+        .docs-main h2:first-child {
+            margin-top: 0;
+        }
+        .docs-main h3 {
+            font-size: 1.25rem;
+            color: var(--gray-800);
+            margin-top: var(--space-xl);
+            margin-bottom: var(--space-md);
+        }
+        .docs-main p {
+            color: var(--gray-700);
+            line-height: 1.8;
+            margin-bottom: var(--space-md);
+        }
+        .docs-main ul, .docs-main ol {
+            margin-left: var(--space-xl);
+            margin-bottom: var(--space-md);
+        }
+        .docs-main li {
+            color: var(--gray-700);
+            line-height: 1.8;
+            margin-bottom: var(--space-sm);
+        }
+        .code-block {
+            background: var(--gray-900);
+            color: #E0E7FF;
+            padding: var(--space-lg);
+            border-radius: var(--radius-lg);
+            margin: var(--space-lg) 0;
+            overflow-x: auto;
+            font-family: var(--font-mono);
+            font-size: 0.875rem;
+            line-height: 1.6;
+        }
+        .inline-code {
+            background: var(--gray-100);
+            color: var(--primary-600);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: var(--font-mono);
+            font-size: 0.875rem;
+        }
+        .info-box {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(0, 102, 255, 0.1));
+            border-left: 4px solid var(--primary-500);
+            padding: var(--space-lg);
+            border-radius: var(--radius-md);
+            margin: var(--space-lg) 0;
+        }
+        .warning-box {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(239, 68, 68, 0.1));
+            border-left: 4px solid var(--warning);
+            padding: var(--space-lg);
+            border-radius: var(--radius-md);
+            margin: var(--space-lg) 0;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            color: var(--primary-500);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: var(--space-xl);
+            transition: all 0.2s ease;
+        }
+        .back-link:hover {
+            gap: var(--space-md);
+            color: var(--primary-600);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: var(--space-lg) 0;
+        }
+        th, td {
+            text-align: left;
+            padding: var(--space-md);
+            border-bottom: 1px solid var(--gray-200);
+        }
+        th {
+            background: var(--gray-50);
+            font-weight: 600;
+            color: var(--gray-900);
+        }
+        @media (max-width: 768px) {
+            .docs-content {
+                grid-template-columns: 1fr;
+            }
+            .docs-sidebar {
+                position: relative;
+                top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="40" height="40" rx="8" fill="url(#logo-gradient)"/>
+                    <path d="M20 10L28 16V24L20 30L12 24V16L20 10Z" stroke="white" stroke-width="2" fill="none"/>
+                    <circle cx="20" cy="20" r="4" fill="white"/>
+                    <defs>
+                        <linearGradient id="logo-gradient" x1="0" y1="0" x2="40" y2="40">
+                            <stop offset="0%" stop-color="#00D4FF"/>
+                            <stop offset="100%" stop-color="#0066FF"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <span class="logo-text">
+                    <strong>FraudShield</strong>
+                    <span class="logo-subtitle">AI Security</span>
+                </span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="docs-page">
+        <a href="/" class="back-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15 18 9 12 15 6"/>
+            </svg>
+            Back to Home
+        </a>
+
+        <div class="docs-header">
+            <h1>Documentation</h1>
+            <p>Everything you need to know about FraudShield</p>
+        </div>
+
+        <div class="docs-content">
+            <!-- Sidebar Navigation -->
+            <aside class="docs-sidebar">
+                <nav class="docs-nav">
+                    <h3>Contents</h3>
+                    <ul>
+                        <li><a href="#overview">Overview</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#ml-model">ML Model</a></li>
+                        <li><a href="#usage">Usage Guide</a></li>
+                        <li><a href="#api">API Reference</a></li>
+                        <li><a href="#tech-stack">Tech Stack</a></li>
+                        <li><a href="#deployment">Deployment</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <!-- Main Documentation -->
+            <main class="docs-main">
+                <h2 id="overview">📋 Overview</h2>
+                <p>FraudShield is an AI-powered fraud detection system that analyzes transaction patterns in real-time to identify potentially fraudulent activity. Built with Python, Flask, and Scikit-Learn, it provides instant fraud risk assessment with 99.2% accuracy.</p>
+
+                <div class="info-box">
+                    <p><strong>Demo Purpose:</strong> FraudShield is designed for educational and demonstration purposes. It showcases machine learning capabilities but should not be used as the sole fraud detection system for real financial transactions.</p>
+                </div>
+
+                <h2 id="how-it-works">🔍 How It Works</h2>
+                <p>FraudShield uses a Random Forest machine learning algorithm to analyze three key transaction features:</p>
+
+                <h3>Input Features</h3>
+                <ol>
+                    <li><strong>Transaction Amount:</strong> The monetary value of the transaction in USD</li>
+                    <li><strong>Distance from Home:</strong> How far (in kilometers) the transaction occurs from the user's home location</li>
+                    <li><strong>Transaction Type:</strong> The method of transaction (Online, In-Store, or ATM)</li>
+                </ol>
+
+                <h3>Analysis Process</h3>
+                <ol>
+                    <li><strong>Data Input:</strong> User enters transaction details in the web interface</li>
+                    <li><strong>Preprocessing:</strong> Data is normalized using StandardScaler</li>
+                    <li><strong>ML Prediction:</strong> Random Forest model analyzes patterns</li>
+                    <li><strong>Risk Assessment:</strong> Model returns fraud probability and confidence level</li>
+                    <li><strong>Result Display:</strong> User receives instant feedback with visual indicators</li>
+                </ol>
+
+                <div class="code-block">
+# Simplified analysis flow
+transaction = {
+    "amount": 500.00,
+    "distance": 250,
+    "transaction_type": 0  # Online
+}
+
+# Normalize features
+scaled_features = scaler.transform([transaction])
+
+# Predict fraud probability
+prediction = model.predict_proba(scaled_features)
+fraud_probability = prediction[0][1] * 100  # 87.3%
+                </div>
+
+                <h2 id="features">✨ Features</h2>
+
+                <h3>Core Capabilities</h3>
+                <ul>
+                    <li><strong>Real-Time Analysis:</strong> Instant fraud detection with &lt;500ms response time</li>
+                    <li><strong>High Accuracy:</strong> 99.2% accuracy on test dataset</li>
+                    <li><strong>Zero Data Retention:</strong> No storage of transaction data</li>
+                    <li><strong>Responsive Design:</strong> Works seamlessly on desktop, tablet, and mobile</li>
+                    <li><strong>Visual Feedback:</strong> Clear, color-coded results with confidence meters</li>
+                </ul>
+
+                <h3>User Interface</h3>
+                <ul>
+                    <li>Modern, professional design with cyan/blue color scheme</li>
+                    <li>Interactive distance indicator</li>
+                    <li>Radio button selection for transaction types</li>
+                    <li>Animated confidence meters and probability bars</li>
+                    <li>Downloadable analysis reports</li>
+                </ul>
+
+                <h2 id="ml-model">🤖 Machine Learning Model</h2>
+
+                <h3>Algorithm: Random Forest Classifier</h3>
+                <p>Random Forest is an ensemble learning method that operates by constructing multiple decision trees and outputting the mode of their predictions.</p>
+
+                <h3>Model Specifications</h3>
+                <table>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Value</th>
+                    </tr>
+                    <tr>
+                        <td>Algorithm</td>
+                        <td>Random Forest</td>
+                    </tr>
+                    <tr>
+                        <td>Number of Estimators</td>
+                        <td>100</td>
+                    </tr>
+                    <tr>
+                        <td>Max Depth</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>Training Samples</td>
+                        <td>4,000</td>
+                    </tr>
+                    <tr>
+                        <td>Test Samples</td>
+                        <td>1,000</td>
+                    </tr>
+                    <tr>
+                        <td>Training Accuracy</td>
+                        <td>~99.5%</td>
+                    </tr>
+                    <tr>
+                        <td>Test Accuracy</td>
+                        <td>~99.2%</td>
+                    </tr>
+                </table>
+
+                <h3>Training Data</h3>
+                <p>The model is trained on 5,000 synthetic transactions:</p>
+                <ul>
+                    <li><strong>Legitimate Transactions (80%):</strong> Average amount ~$75, close to home (&lt;50km), varied types</li>
+                    <li><strong>Fraudulent Transactions (20%):</strong> Higher amounts (~$300), far from home (50-500km), more online purchases</li>
+                </ul>
+
+                <div class="warning-box">
+                    <p><strong>Note:</strong> The model is trained on synthetic data for demonstration purposes. Real-world fraud detection systems require much larger datasets with real transaction patterns.</p>
+                </div>
+
+                <h2 id="usage">📖 Usage Guide</h2>
+
+                <h3>Using the Web Interface</h3>
+                <ol>
+                    <li><strong>Navigate to FraudShield:</strong> Open the website in your browser</li>
+                    <li><strong>Enter Transaction Amount:</strong> Input the dollar amount (e.g., 150.00)</li>
+                    <li><strong>Enter Distance:</strong> Input distance from home in kilometers (e.g., 25)</li>
+                    <li><strong>Select Transaction Type:</strong> Choose Online, In-Store, or ATM</li>
+                    <li><strong>Click "Analyze Transaction":</strong> Submit for analysis</li>
+                    <li><strong>View Results:</strong> See fraud probability, confidence level, and recommendation</li>
+                </ol>
+
+                <h3>Interpreting Results</h3>
+                <ul>
+                    <li><strong>Green/Safe:</strong> Transaction appears legitimate (low fraud probability)</li>
+                    <li><strong>Red/Warning:</strong> High fraud risk detected (high fraud probability)</li>
+                    <li><strong>Confidence Level:</strong> How certain the model is about its prediction (0-100%)</li>
+                    <li><strong>Fraud Probability:</strong> Percentage chance the transaction is fraudulent</li>
+                </ul>
+
+                <h2 id="api">🔌 API Reference</h2>
+
+                <h3>Base URL</h3>
+                <div class="code-block">
+https://your-app.onrender.com
+                </div>
+
+                <h3>Endpoints</h3>
+
+                <h4>POST /predict</h4>
+                <p>Analyze a transaction for fraud.</p>
+
+                <p><strong>Request Body:</strong></p>
+                <div class="code-block">
+{
+  "amount": 150.00,
+  "distance": 25.5,
+  "transaction_type": 0
+}
+                </div>
+
+                <p><strong>Parameters:</strong></p>
+                <table>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <td>amount</td>
+                        <td>float</td>
+                        <td>Transaction amount in USD (> 0)</td>
+                    </tr>
+                    <tr>
+                        <td>distance</td>
+                        <td>float</td>
+                        <td>Distance from home in km (≥ 0)</td>
+                    </tr>
+                    <tr>
+                        <td>transaction_type</td>
+                        <td>int</td>
+                        <td>0=Online, 1=In-Store, 2=ATM</td>
+                    </tr>
+                </table>
+
+                <p><strong>Response (Success):</strong></p>
+                <div class="code-block">
+{
+  "prediction": "Legitimate",
+  "is_fraud": false,
+  "confidence": 94.5,
+  "fraud_probability": 5.5,
+  "legitimate_probability": 94.5
+}
+                </div>
+
+                <p><strong>Response (Error):</strong></p>
+                <div class="code-block">
+{
+  "error": "Invalid input: Amount must be positive"
+}
+                </div>
+
+                <h4>GET /health</h4>
+                <p>Check service health status.</p>
+
+                <p><strong>Response:</strong></p>
+                <div class="code-block">
+{
+  "status": "healthy",
+  "model_loaded": true
+}
+                </div>
+
+                <h3>Example API Call (Python)</h3>
+                <div class="code-block">
+import requests
+
+url = "https://your-app.onrender.com/predict"
+data = {
+    "amount": 500.00,
+    "distance": 100,
+    "transaction_type": 0
+}
+
+response = requests.post(url, json=data)
+result = response.json()
+
+print(f"Prediction: {result['prediction']}")
+print(f"Fraud Probability: {result['fraud_probability']}%")
+                </div>
+
+                <h3>Example API Call (JavaScript)</h3>
+                <div class="code-block">
+const analyzeTransaction = async (data) => {
+  const response = await fetch('/predict', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  });
+  
+  const result = await response.json();
+  console.log(result);
+};
+
+// Usage
+analyzeTransaction({
+  amount: 500.00,
+  distance: 100,
+  transaction_type: 0
+});
+                </div>
+
+                <h2 id="tech-stack">🛠️ Tech Stack</h2>
+
+                <h3>Backend</h3>
+                <ul>
+                    <li><strong>Python 3.11:</strong> Core programming language</li>
+                    <li><strong>Flask 3.0:</strong> Web framework</li>
+                    <li><strong>Scikit-Learn 1.3:</strong> Machine learning library</li>
+                    <li><strong>Pandas:</strong> Data manipulation</li>
+                    <li><strong>NumPy:</strong> Numerical computing</li>
+                    <li><strong>Joblib:</strong> Model serialization</li>
+                    <li><strong>Gunicorn:</strong> WSGI server for deployment</li>
+                </ul>
+
+                <h3>Frontend</h3>
+                <ul>
+                    <li><strong>HTML5:</strong> Semantic markup</li>
+                    <li><strong>CSS3:</strong> Modern styling with custom properties</li>
+                    <li><strong>Vanilla JavaScript:</strong> No frameworks, pure JS</li>
+                    <li><strong>Google Fonts:</strong> DM Sans & Space Mono typography</li>
+                </ul>
+
+                <h3>Deployment</h3>
+                <ul>
+                    <li><strong>GitHub:</strong> Version control and code hosting</li>
+                    <li><strong>Render:</strong> Cloud hosting platform</li>
+                    <li><strong>Git:</strong> Version control system</li>
+                </ul>
+
+                <h2 id="deployment">🚀 Deployment</h2>
+
+                <h3>Local Development</h3>
+                <div class="code-block">
+# Clone repository
+git clone https://github.com/yourusername/fraud-detection-app.git
+cd fraud-detection-app
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Train model
+python model.py
+
+# Run application
+python app.py
+
+# Visit http://localhost:5000
+                </div>
+
+                <h3>Deploy to Render</h3>
+                <ol>
+                    <li>Push code to GitHub</li>
+                    <li>Create account on Render.com</li>
+                    <li>Connect GitHub repository</li>
+                    <li>Configure build command: <span class="inline-code">pip install -r requirements.txt && python model.py</span></li>
+                    <li>Configure start command: <span class="inline-code">gunicorn app:app</span></li>
+                    <li>Deploy and get live URL</li>
+                </ol>
+
+                <p>For detailed deployment instructions, see the <a href="https://github.com/yourusername/fraud-detection-app/blob/main/DEPLOYMENT_GUIDE.md" style="color: var(--primary-500);">Deployment Guide</a>.</p>
+
+                <h2 id="faq">❓ Frequently Asked Questions</h2>
+
+                <h3>Is FraudShield free to use?</h3>
+                <p>Yes! FraudShield is completely free and open-source under the MIT License.</p>
+
+                <h3>Do you store my transaction data?</h3>
+                <p>No. FraudShield has a strict zero data retention policy. All analysis happens in real-time and data is immediately discarded.</p>
+
+                <h3>Can I use this for real fraud detection?</h3>
+                <p>FraudShield is designed for educational and demonstration purposes. For real financial security, use professional, certified fraud detection systems.</p>
+
+                <h3>How accurate is the model?</h3>
+                <p>The model achieves ~99.2% accuracy on synthetic test data. Real-world accuracy may vary as it's trained on demonstration data.</p>
+
+                <h3>Can I integrate the API into my app?</h3>
+                <p>Yes! The API is available for integration. However, please note this is a demonstration tool and shouldn't be used for production financial applications.</p>
+
+                <h3>Is the source code available?</h3>
+                <p>Yes! FraudShield is open-source. Visit our <a href="https://github.com/yourusername/fraud-detection-app" style="color: var(--primary-500);">GitHub repository</a>.</p>
+
+                <h3>What browsers are supported?</h3>
+                <p>FraudShield works on all modern browsers: Chrome, Firefox, Safari, Edge, and mobile browsers.</p>
+
+                <h3>Can I customize or fork this project?</h3>
+                <p>Absolutely! The project is MIT licensed. Fork it, modify it, and make it your own!</p>
+
+                <div class="info-box">
+                    <p><strong>Have more questions?</strong> Open an issue on <a href="https://github.com/yourusername/fraud-detection-app/issues" style="color: var(--primary-500);">GitHub</a> or contact us via email.</p>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>Built with Flask, Scikit-Learn & Random Forest ML</p>
+            <div class="footer-links">
+                <a href="/docs">Documentation</a>
+                <a href="/api">API</a>
+                <a href="/privacy">Privacy</a>
+                <a href="/terms">Terms</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
