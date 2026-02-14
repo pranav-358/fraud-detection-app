@@ -4,6 +4,7 @@ Flask Backend for Credit Card Fraud Detection Web App
 
 from flask import Flask, render_template, request, jsonify
 import joblib
+import sklearn
 import numpy as np
 import os
 
@@ -14,15 +15,19 @@ MODEL_PATH = 'fraud_model.pkl'
 SCALER_PATH = 'scaler.pkl'
 
 # Check if model files exist
-if not os.path.exists(MODEL_PATH) or not os.path.exists(SCALER_PATH):
-    print("⚠️  Model files not found!")
-    print("Please run 'python model.py' first to train and save the model.")
-    model = None
-    scaler = None
+model = None
+scaler = None
+
+if os.path.exists(MODEL_PATH) and os.path.exists(SCALER_PATH):
+    try:
+        model = joblib.load(MODEL_PATH)
+        scaler = joblib.load(SCALER_PATH)
+        print("✓ Model and scaler loaded successfully!")
+        print(f"⚡ scikit-learn version: {sklearn.__version__}")
+    except Exception as e:
+        print(f"⚠️ Error loading model or scaler: {e}")
 else:
-    model = joblib.load(MODEL_PATH)
-    scaler = joblib.load(SCALER_PATH)
-    print("✓ Model and scaler loaded successfully!")
+    print("⚠️ Model or scaler files not found! Please run 'model.py' first.")
 
 @app.route('/')
 def home():
@@ -120,6 +125,8 @@ def health():
     """Health check endpoint"""
     return jsonify({
         'status': 'healthy',
-        'model_loaded': model is not None and scaler is not None
+        'model_loaded': model is not None and scaler is not None,
+        'sklearn_version': sklearn.__version__
+
     })
 
